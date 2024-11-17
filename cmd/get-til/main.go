@@ -198,7 +198,7 @@ func mdLinkToCosenseLink(markdown, esaTeamURL string) string {
 		if len(match) > 2 {
 			text := matches[1]
 			link := matches[2]
-			if strings.HasPrefix(link, "http") {
+			if !strings.HasPrefix(link, "http") {
 				link = esaTeamURL + link
 			}
 			return fmt.Sprintf("[%s %s]", text, link)
